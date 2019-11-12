@@ -1,14 +1,11 @@
 <?php
 
-
 namespace MaxGaurav\LaravelKafkaLogger;
-
 
 class LogProcessor
 {
     public function __invoke(array $record)
     {
-        // TODO: add extra data if needed
         $record['extra'] = [
             'user_id' => auth()->user() ? auth()->user()->id : NULL,
             'origin' => request()->headers->get('origin'),

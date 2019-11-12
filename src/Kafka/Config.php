@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MaxGaurav\LaravelKafkaLogger\Kafka;
-
 
 use Kafka\ProducerConfig;
 
@@ -20,7 +18,6 @@ class Config
 
     public function __construct(array $configuration, ProducerConfig $producerConfig)
     {
-        dd($configuration);
         $this->setConfiguration($configuration);
         $this->setInstance($producerConfig);
     }

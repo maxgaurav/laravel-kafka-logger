@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MaxGaurav\LaravelKafkaLogger;
-
 
 use MaxGaurav\LaravelKafkaLogger\Kafka\Producer;
 use Monolog\Formatter\FormatterInterface;
@@ -16,10 +14,16 @@ class LogHandler extends AbstractProcessingHandler
      */
     protected $kafkaProducer;
 
+    /**
+     * LogHandler constructor.
+     * @param Producer $kafkaProducer
+     * @param int $level
+     * @param bool $bubble
+     */
     public function __construct(Producer $kafkaProducer, $level = Logger::DEBUG, bool $bubble = true)
     {
-        $this->kafkaProducer = $kafkaProducer;
         parent::__construct($level, $bubble);
+        $this->kafkaProducer = $kafkaProducer;
     }
 
     /**
@@ -29,7 +33,7 @@ class LogHandler extends AbstractProcessingHandler
      */
     public function write(array $record): void
     {
-        $message = array_merge(['topic' => config('kafka-settings.topic')], $record);
+        $message = array_merge(['topic' => config('kafka-settings.topic')], $record['formatted']);
         $this->kafkaProducer->send([$message]);
     }
 

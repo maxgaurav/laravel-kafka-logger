@@ -2,7 +2,6 @@
 
 namespace MaxGaurav\LaravelKafkaLogger;
 
-
 use Monolog\Formatter\NormalizerFormatter;
 
 class LogFormatter extends NormalizerFormatter
@@ -27,8 +26,9 @@ class LogFormatter extends NormalizerFormatter
     {
         $data = [
             'key' => $record['level_name'],
-            'message' => json_encode([
-                'data' => $record['data'],
+            'value' => json_encode([
+                'message' => $record['message'],
+                'formatted_data' => collect($record)->except('extra')->toArray(),
                 'request_info' => $record['extra']
             ])
         ];

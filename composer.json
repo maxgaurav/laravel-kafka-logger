@@ -2,6 +2,7 @@
     "name": "maxgaurav/laravel-kafka-logger",
     "description": "Kafka logging",
     "type": "library",
+    "version": "0.0.1",
     "authors": [
         {
             "name": "Max Gaurav",
@@ -27,5 +28,11 @@
                 "MaxGaurav\\LaravelKafkaLogger\\LaravelKafkaLoggerServiceProvider"
             ]
         }
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "MaxGaurav\\LaravelKafkaLogger\\": "src"
+        }
+    },
+    "minimum-stability": "dev"
 }

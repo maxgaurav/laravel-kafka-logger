@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MaxGaurav\LaravelKafkaLogger;
-
 
 use MaxGaurav\LaravelKafkaLogger\Kafka\Producer;
 use Monolog\Logger;
@@ -15,6 +13,7 @@ class LogMonolog
      *
      * @param array $config
      * @return Logger
+     * @throws
      */
     public function __invoke(array $config)
     {

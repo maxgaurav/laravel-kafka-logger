@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MaxGaurav\LaravelKafkaLogger;
-
 
 use Illuminate\Support\ServiceProvider;
 use Kafka\ProducerConfig;
@@ -11,6 +9,9 @@ use MaxGaurav\LaravelKafkaLogger\Kafka\Producer;
 
 class LaravelKafkaLoggerServiceProvider extends ServiceProvider
 {
+    /**
+     * {@inheritDoc}
+     */
     public function register()
     {
         $this->app->singleton(Config::class, function () {
@@ -34,6 +35,6 @@ class LaravelKafkaLoggerServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/config/kafka-settings.php' => config_path('kafka-settings.php')
-        ]);
+        ], 'config');
     }
 }

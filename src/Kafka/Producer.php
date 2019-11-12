@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MaxGaurav\LaravelKafkaLogger\Kafka;
-
 
 use Kafka\Producer as KafkaProducer;
 
