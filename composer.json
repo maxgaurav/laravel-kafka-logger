@@ -1,0 +1,24 @@
+{
+    "name": "maxgaurav/laravel-kafka-logger",
+    "description": "Kafka logging",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Max Gaurav",
+            "email": "max.gaurav@ithands.net"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^2.0",
+        "laravel/framework": "^6.2",
+        "ext-json": "*"
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MaxGaurav/LaravelKafkaLogger/LaravelKafkaLoggerServiceProvider"
+            ]
+        }
+    }
+}
