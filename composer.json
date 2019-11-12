@@ -8,12 +8,19 @@
             "email": "max.gaurav@ithands.net"
         }
     ],
+    "repositories": [
+        {
+            "vendor-alias": "nmred",
+            "type": "git",
+            "url": "https://github.com/maxgaurav/kafka-php.git"
+        }
+    ],
     "require": {
         "monolog/monolog": "^2.0",
         "laravel/framework": "^6.2",
-        "ext-json": "*"
+        "ext-json": "*",
+        "nmred/kafka-php": "dev-master"
     },
-
     "extra": {
         "laravel": {
             "providers": [
