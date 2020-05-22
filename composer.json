@@ -2,7 +2,6 @@
     "name": "maxgaurav/laravel-kafka-logger",
     "description": "Kafka logging",
     "type": "library",
-    "version": "0.0.1",
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +18,7 @@
     ],
     "require": {
         "monolog/monolog": "^2.0",
-        "laravel/framework": "^6.2",
+        "laravel/framework": "^6.2 || 7.*",
         "ext-json": "*",
         "nmred/kafka-php": "dev-master"
     },
@@ -35,5 +34,6 @@
             "MaxGaurav\\LaravelKafkaLogger\\": "src"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
